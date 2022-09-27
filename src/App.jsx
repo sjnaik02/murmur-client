@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Chatroom from "./components/Chatroom";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="w-screen h-screen bg-gray-900 flex items-center justify-center">
-      <h1 className="text-xl text-white">Hello world</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/chatroom" element={<Chatroom />} />"
+      </Routes>
+    </Router>
   );
 }
 
