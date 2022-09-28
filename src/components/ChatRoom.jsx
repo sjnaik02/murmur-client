@@ -37,7 +37,10 @@ function ChatRoom() {
       <div className="flex flex-col items-center justify-center">
         <div className="w-5/6 lg:w-96 mx-4  h-[80vh] bg-gray-900 overflow-y-scroll">
           {messages.map((message) => (
-            <Message message={message} />
+            <Message
+              message={message}
+              key={`${message.senderId}${message.timestamp}`}
+            />
           ))}
           <div ref={messagesEndRef} />
         </div>
