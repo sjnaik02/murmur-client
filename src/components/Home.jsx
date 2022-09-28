@@ -8,13 +8,13 @@ function Home() {
   const navigate = useNavigate();
   const handleClick = () => {
     if (roomName && userName) {
-      navigate(`/${roomName}`);
+      navigate(`/${roomName}`, { state: { user: userName } });
     }
   };
 
   return (
     <div>
-      <h1 className="text-3xl text-white">Murmur</h1>
+      <h1 className="text-3xl text-center">Murmur</h1>
       <div className="flex flex-col items-center justify-center">
         <input
           type="text"
